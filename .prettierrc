@@ -1,0 +1,11 @@
+{
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "*.eslintrc",
+      "options": {
+        "trailingComma": "none"
+      }
+    }
+  ]
+}
