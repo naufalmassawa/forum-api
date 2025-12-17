@@ -46,6 +46,7 @@ class GetThreadDetailUseCase {
           date: row.date.toISOString(),
           content: row.content,
           isDelete: row.is_delete,
+          likeCount: row.like_count ? parseInt(row.like_count, 10) : 0,
           replies: repliesByComment[row.id] || [],
         }),
     );

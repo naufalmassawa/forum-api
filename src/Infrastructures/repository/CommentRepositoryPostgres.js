@@ -75,10 +75,18 @@ class CommentRepositoryPostgres extends CommentRepository {
               users.username,
               comments.date,
               comments.content,
-              comments.is_delete
+              comments.is_delete,
+              COALESCE(COUNT(comment_likes.id), 0) as like_count
             FROM comments
             JOIN users ON comments.owner = users.id
+            LEFT JOIN comment_likes ON comments.id = comment_likes.comment_id
             WHERE comments.thread_id = $1
+            GROUP BY 
+              comments.id, 
+              users.username, 
+              comments.date, 
+              comments.content, 
+              comments.is_delete
             ORDER BY comments.date ASC`,
       values: [threadId],
     };
