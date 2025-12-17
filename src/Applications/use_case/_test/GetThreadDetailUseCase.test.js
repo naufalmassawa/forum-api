@@ -45,6 +45,7 @@ describe('GetThreadDetailUseCase', () => {
         date: new Date('2024-06-12T10:45:18.765Z'),
         content: 'a comment',
         is_delete: false,
+        like_count: 0,
       },
       {
         id: 'comment-456',
@@ -52,6 +53,7 @@ describe('GetThreadDetailUseCase', () => {
         date: new Date('2024-06-12T10:45:18.765Z'),
         content: 'another comment',
         is_delete: true,
+        like_count: 0,
       },
     ];
 
@@ -81,6 +83,7 @@ describe('GetThreadDetailUseCase', () => {
         date: '2024-06-12T10:45:18.765Z',
         content: 'a comment',
         isDelete: false,
+        likeCount: 0,
         replies: mockRepliesForComment1,
       }),
       new DetailComment({
@@ -89,6 +92,7 @@ describe('GetThreadDetailUseCase', () => {
         date: '2024-06-12T10:45:18.765Z',
         content: 'another comment',
         isDelete: true,
+        likeCount: 0,
         replies: [],
       }),
     ];
