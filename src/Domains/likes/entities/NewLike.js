@@ -8,7 +8,7 @@ class NewLike {
   }
 
   _verifyPayload({ commentId, owner }) {
-    if (!commentId || owner) {
+    if (!commentId || !owner) {
       throw new Error('NEW_LIKE.NOT_CONTAIN_NEEDED_PROPERTY');
     }
 
